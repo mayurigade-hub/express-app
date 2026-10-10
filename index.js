@@ -1,14 +1,23 @@
 const express = require('express');
 const app = express();
 
-let port = 8080;
-
-app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
-})
+app.listen(8080);
 
 
-app.use((req, res) => {
-    console.log("Request received");
+app.get('/', (req, res) => {//home path
     res.send("Hello, World!");
 })
+
+app.get('/about', (req, res) => {
+    res.send("about page");
+})
+
+app.get('/contact', (req, res) => {
+    res.send("contact page");
+})
+
+
+// app.use((req, res) => {
+//     console.log("Request received");
+//     res.send("Hello, World!");
+// })
